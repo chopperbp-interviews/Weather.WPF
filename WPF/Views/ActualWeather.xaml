@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="WeatherApp.WPF.Views.ActualWeather"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WeatherApp.WPF.ViewModels"
+            xmlns:cc="clr-namespace:WPFControls;assembly=WPFControls"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance local:ActualWeatherViewModel}"
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
+    <Grid>
+        <StackPanel VerticalAlignment="Top" Grid.Row="0">
+            <TextBlock Text="{Binding CurrentTemp, StringFormat=Aktuális hőmérséklet: {0:F2}℃}" />
+            <TextBlock Text="{Binding CurrentHumidity, StringFormat=Aktuális páratartalom: {0:F2}%}" />
+            <TextBlock Text="{Binding CurrentPressure, StringFormat=Aktuális légnyomás: {0:F2}hPa}" />
+        </StackPanel>
+        <Viewbox Grid.Row="1" VerticalAlignment="Bottom">
+            <cc:Graph Margin="10" Data="{Binding Data}" />
+        </Viewbox>
+    </Grid>
+</UserControl>

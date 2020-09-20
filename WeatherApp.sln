@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8257F47F-652B-4671-ACB4-948E0CEB4166}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF", "WPF\WPF.csproj", "{65355455-4754-4F5F-9956-700F5022B69B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFControls", "WPFControls\WPFControls.csproj", "{022B3A46-33FA-496A-A415-EC94D57367EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65355455-4754-4F5F-9956-700F5022B69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65355455-4754-4F5F-9956-700F5022B69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65355455-4754-4F5F-9956-700F5022B69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65355455-4754-4F5F-9956-700F5022B69B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022B3A46-33FA-496A-A415-EC94D57367EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022B3A46-33FA-496A-A415-EC94D57367EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022B3A46-33FA-496A-A415-EC94D57367EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022B3A46-33FA-496A-A415-EC94D57367EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC4D0798-4E43-49B5-856E-7945F8804BC8}
+	EndGlobalSection
+EndGlobal

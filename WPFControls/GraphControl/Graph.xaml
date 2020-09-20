@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="WPFControls.Graph"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFControls.GraphControl.Models"
+             xmlns:styleSelector="clr-namespace:WeatherApp.WPF.GraphControl.StyleSelectors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             >
+    <ItemsControl ItemsSource="{Binding Items, RelativeSource={RelativeSource AncestorType=UserControl}}">
+        <ItemsControl.Resources>
+            <Style x:Key="TextBlockStyle">
+                <Setter Property="Canvas.Left" Value="{Binding Left}"/>
+                <Setter Property="Canvas.Bottom" Value="{Binding Bottom}"/>
+            </Style>
+            <DataTemplate DataType="{x:Type local:Line}">
+                <Polyline Points="{Binding Points}" Stroke="#ffcc00" StrokeThickness="2"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type local:Background}">
+                <Polyline Points="{Binding Points}" Fill="#33ffcc00"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type local:Tempature}">
+                <TextBlock Text="{Binding Celsius, StringFormat={}{0:F0}}" Foreground="#b5b5b5" FontFamily="Arial" FontWeight="Bold"  FontSize="11"  />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type local:Hour}">
+                <TextBlock Text="{Binding Time, StringFormat={}{0:HH:mm}}" Foreground="#b5b5b5" FontFamily="Arial" FontWeight="Bold"  FontSize="11"  />
+            </DataTemplate>
+        </ItemsControl.Resources>
+        <ItemsControl.ItemContainerStyleSelector>
+            <styleSelector:GraphStyleSelector  TextBlockStyle="{StaticResource TextBlockStyle}" />
+        </ItemsControl.ItemContainerStyleSelector>
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Canvas Width="{Binding CanvasWidth, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                            Height="{Binding CanvasHeight, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
+</UserControl>
